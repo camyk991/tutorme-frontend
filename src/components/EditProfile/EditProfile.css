@@ -1,0 +1,11 @@
+.profile-image {
+  transition: all ease 0.3s;
+}
+
+.profile-image:hover {
+  transform: scale(1.4);
+}
+
+.profile-image.checked {
+  transform: scale(1.4);
+}

@@ -1,0 +1,87 @@
+.Lessons h2 {
+  color: var(--main-font);
+}
+
+.Lessons p {
+  color: var(--secondary-font);
+}
+
+.offers-grid {
+  min-height: 90vh;
+  background-color: var(--bg);
+  padding: 40px 10px;
+}
+
+.offers-content {
+  background-color: var(--light-bg);
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 2rem;
+  margin: auto;
+  border-radius: 1.4rem;
+  min-height: 78vh;
+}
+
+.Lessons.light .offers-content {
+  -webkit-box-shadow: 8px 8px 28px -15px rgba(66, 87, 90, 0.85);
+  -moz-box-shadow: 8px 8px 28px -15px rgba(66, 87, 90, 0.85);
+  box-shadow: 8px 8px 28px -15px rgba(66, 87, 90, 0.85);
+}
+
+.Lessons.dark .offers-content {
+  border: 1px solid #000;
+}
+
+.single-lesson {
+  background: var(--bg);
+  border-radius: 1.4rem;
+  width: 280px;
+  min-height: 240px;
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Lessons button {
+  min-width: fit-content;
+  width: 140px;
+  margin: 0 auto;
+}
+
+.Lessons button:disabled,
+.Lessons button:disabled:hover {
+  background-color: #ccc;
+  border: 1px solid #cccccc;
+  color: #6f6f6f;
+  cursor: auto;
+}
+
+.lesson-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--light-bg);
+}
+
+.lesson-header-img {
+  background-color: red;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.lesson-header-info h2 {
+  margin-bottom: 5px;
+}
+
+.lesson-info {
+  padding: 10px 0;
+  text-align: center;
+}

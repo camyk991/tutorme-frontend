@@ -1,0 +1,92 @@
+.TeacherModal .pb-5,
+.edit-container .pb-5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.TeacherModal .section,
+.edit-container .section {
+  position: relative;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.TeacherModal .over-hide,
+.edit-container .over-hide {
+  overflow: hidden;
+}
+
+.TeacherModal .z-bigger,
+.edit-container .z-bigger {
+  z-index: 100 !important;
+}
+
+.edit-container [type="checkbox"]:checked,
+.edit-container [type="checkbox"]:not(:checked),
+.TeacherModal [type="radio"]:checked,
+.TeacherModal [type="radio"]:not(:checked) {
+  display: none;
+}
+
+.TeacherModal .checkbox-tools:checked + label,
+.TeacherModal .checkbox-tools:not(:checked) + label,
+.edit-container .checkbox-tools:checked + label,
+.edit-container .checkbox-tools:not(:checked) + label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 5px 10px;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: 2px solid var(--bg);
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.TeacherModal .checkbox-tools:not(:checked) + label,
+.edit-container .checkbox-tools:not(:checked) + label {
+  background-color: var(--bg);
+}
+
+.TeacherModal .checkbox-tools:checked + label,
+.edit-container .checkbox-tools:checked + label {
+  background-color: transparent;
+}
+
+.TeacherModal .checkbox-tools:not(:checked) + label:hover,
+.edit-container .checkbox-tools:not(:checked) + label:hover {
+  background-color: var(--accent);
+}
+
+.TeacherModal .checkbox-tools:checked + label::before,
+.TeacherModal .checkbox-tools:not(:checked) + label::before,
+.edit-container .checkbox-tools:checked + label::before,
+.edit-container .checkbox-tools:not(:checked) + label::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: var(--accent);
+  z-index: -1;
+}
+
+.TeacherModal .checkbox-tools:not(:checked) + label,
+.edit-container .checkbox-tools:not(:checked) + label {
+  color: var(--main-font);
+}

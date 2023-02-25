@@ -1,0 +1,80 @@
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow-y: auto;
+  margin: 30px 20px;
+}
+
+.scroll-container {
+  width: 100%;
+}
+
+.modal-image {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.modal-main-right {
+  min-width: 100px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-offers-col {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  height: 60vh;
+}
+
+.Waiting .modal-offers-col button {
+  margin: 0;
+  margin-left: auto;
+}
+
+.single-modal-offer {
+  width: 550px;
+  background-color: var(--bg);
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.add-friend-form {
+  display: block;
+  box-shadow: none !important;
+  width: 100%;
+}
+
+.add-friend-submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .single-modal-offer {
+    width: 60vw;
+    background-color: var(--bg);
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .Waiting .modal-offers-col button {
+    margin: 0;
+  }
+}
