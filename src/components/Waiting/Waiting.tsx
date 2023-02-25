@@ -2,7 +2,7 @@ import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import API from "../../API";
-import { Heading } from "../../GlobalForm.styles";
+import { Heading } from "../../GlobalStyles";
 import ProfileHeader from "../Profile/ProfileHeader";
 import TeacherOffersModal from "../TeacherOffersModal/TeacherOffersModal";
 import "./Waiting.css";

@@ -1,21 +1,11 @@
 import React, { RefObject, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API, { UserInfoType } from "../../API";
+import { ButtonContainer, Form, FormInfo, FormWrapper, Input, Label, Loader, Submit } from "../../GlobalStyles";
 import ProfileHeader from "../Profile/ProfileHeader";
 import "../TeacherModal/RadioBtns.css";
 import "./EditProfile.css";
-import {
-  ButtonContainer,
-  Form,
-  FormInfo,
-  FormWrapper,
-  Heading,
-  Input,
-  Label,
-  Loader,
-  Select,
-  Submit,
-} from "../../GlobalForm.styles";
+
 
 type Props = {
   isLoggedIn: boolean;

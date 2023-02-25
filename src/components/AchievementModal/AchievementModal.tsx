@@ -9,7 +9,7 @@ import {
   ModalContainer,
 } from "../TeacherModal/TeacherModal.styles";
 
-import { FormInfo, Heading } from "../../GlobalForm.styles";
+import { FormInfo, Heading } from "../../GlobalStyles";
 
 interface ModalProps {
   src: string;

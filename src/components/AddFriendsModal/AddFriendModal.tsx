@@ -16,7 +16,7 @@ import {
   Loader,
   Label,
   Submit,
-} from "../../GlobalForm.styles";
+} from "../../GlobalStyles";
 
 import { Form, Link } from "react-router-dom";
 import './AddFriendModal.css'

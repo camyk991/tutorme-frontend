@@ -1,12 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Input,
-  FormWrapper,
-  Label,
-  Textarea,
-  ButtonContainer,
-} from "../../GlobalForm.styles";
 
 import math from "./icons/math-light.png";
 import english from "./icons/english-light.png";
@@ -36,6 +28,7 @@ import API from "../../API";
 import { UserInfoType } from "../../API";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileHeader from "../Profile/ProfileHeader";
+import { ButtonContainer, Form, FormWrapper, Input, Label, Textarea } from "../../GlobalStyles";
 
 type Profile = {
   userData: UserInfoType | undefined;

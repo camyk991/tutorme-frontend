@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  SignForm,
-  Input,
-  Submit,
-  Loader,
-  FormWrapper,
-  SignHeading,
-  FormInfo,
-  Label,
-  SignAside,
-} from "../../GlobalForm.styles";
+
 
 import { Link, useNavigate } from "react-router-dom";
 import API from "../../API";
+import { FormInfo, FormWrapper, Input, Loader, SignAside, SignForm, SignHeading, Submit } from "../../GlobalStyles";
 
 type Props = {
   isLoggedIn: boolean;
@@ -142,6 +133,3 @@ const Register: React.FC<Props> = ({ isLoggedIn }) => {
 };
 
 export default Register;
-function signUpFetch(name: string, mail: string, password: string) {
-  throw new Error("Function not implemented.");
-}

@@ -1,18 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  SignForm,
-  Input,
-  Submit,
-  Loader,
-  FormWrapper,
-  SignHeading,
-  SignAside,
-  Label,
-  FormInfo,
-} from "../../GlobalForm.styles";
 
 import { Link, useNavigate } from "react-router-dom";
 import API, { UserInfoType } from "../../API";
+import { FormInfo, FormWrapper, Input, Loader, SignAside, SignForm, SignHeading, Submit } from "../../GlobalStyles";
 
 type Props = {
   isLoggedIn: boolean;

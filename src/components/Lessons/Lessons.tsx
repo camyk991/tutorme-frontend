@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import API, { UserInfoType } from "../../API";
-import { Heading } from "../../GlobalForm.styles";
+import { Heading } from "../../GlobalStyles";
 import ProfileHeader from "../Profile/ProfileHeader";
 import "./Lessons.css";
 

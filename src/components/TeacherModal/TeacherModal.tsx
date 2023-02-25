@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import API, { UserInfoType } from "../../API";
+import { FormInfo, Heading } from "../../GlobalStyles";
 import "./RadioBtns.css";
 
 import {
@@ -13,7 +14,6 @@ import {
   ModalSubHeaders,
 } from "./TeacherModal.styles";
 
-import { FormInfo, Heading } from "../../GlobalForm.styles";
 
 interface ModalProps {
   userName: string;

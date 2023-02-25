@@ -17,10 +17,10 @@ import { Link, useNavigate } from "react-router-dom";
 import TeacherModal from "../TeacherModal/TeacherModal";
 import ProfileHeader from "./ProfileHeader";
 import AddFriendModal from "../AddFriendsModal/AddFriendModal";
-import { Heading } from "../../GlobalForm.styles";
 
 import badge from "./icons/badge.png";
 import AchievementModal from "../AchievementModal/AchievementModal";
+import { Heading } from "../../GlobalStyles";
 
 type Profile = {
   isLoggedIn: boolean;
