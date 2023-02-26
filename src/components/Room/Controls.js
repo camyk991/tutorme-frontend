@@ -211,7 +211,7 @@ export default function Controls(props) {
         </div>
         <div>
           <LeaveBtn onClick={() => leaveChannel()}>
-            {userData.mail == currLesson.teacherEmail ? (
+            {userData?.mail == currLesson.teacherEmail ? (
               "Zakończ lekcję"
             ) : (
               <svg

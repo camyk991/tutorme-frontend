@@ -95,7 +95,11 @@ const Profile: React.FC<Profile> = ({
   }, [userData?.theme]);
 
   useEffect(() => {
-    if (!isLoggedIn) navigate("/sign-in");
+    if (!isLoggedIn) {
+      navigate("/sign-in");
+      document.documentElement.classList.remove("light")
+      document.documentElement.classList.remove("dark")
+    }
 
     if (ref.current === 0) {
       ref.current = ref.current + 1;
