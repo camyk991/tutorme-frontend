@@ -25,7 +25,7 @@ const AchievementModal: React.FC<ModalProps> = ({
   hideModal,
 }) => {
   return (
-    <Modal className={`AchievementModal`}>
+    <Modal className={`AchievementModal`} style={{ height: "100%" }}>
       <ModalContainer>
         <ModalContent>
           <AchievementMain>

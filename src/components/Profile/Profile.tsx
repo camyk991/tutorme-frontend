@@ -97,8 +97,8 @@ const Profile: React.FC<Profile> = ({
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/sign-in");
-      document.documentElement.classList.remove("light")
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.remove("dark");
     }
 
     if (ref.current === 0) {
@@ -408,36 +408,7 @@ const Profile: React.FC<Profile> = ({
                     Dodaj
                   </button>
                 </div>
-                <div className="friends-list">
-                  <>
-                    {/* {userData && userData.friends.length ? (
-                      userData?.friends.map((el) => {
-                        return (
-                          <div className="friend-el" key={el.id}>
-                            <div className="friend-pic">
-                              <div className="f-pic">
-                                <img
-                                  src={`/assets/${el?.avatar}`}
-                                  alt={el.avatar}
-                                />
-                              </div>
-                            </div>
-                            <div className="friend-name">{el.name}</div>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <>Brak</>
-                    )} */}
-                  </>
-
-                  {/* <div className="friend-el">
-                    <div className="friend-pic">
-                      <div className="f-pic"></div>
-                    </div>
-                    <div className="friend-name">Piotr</div>
-                  </div> */}
-                </div>
+                <div className="friends-list"></div>
               </div>
             </section>
           </div>

@@ -28,7 +28,14 @@ import API from "../../API";
 import { UserInfoType } from "../../API";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileHeader from "../Profile/ProfileHeader";
-import { ButtonContainer, Form, FormWrapper, Input, Label, Textarea } from "../../GlobalStyles";
+import {
+  ButtonContainer,
+  Form,
+  FormWrapper,
+  Input,
+  Label,
+  Textarea,
+} from "../../GlobalStyles";
 
 type Profile = {
   userData: UserInfoType | undefined;

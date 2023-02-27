@@ -14,7 +14,6 @@ import {
   ModalSubHeaders,
 } from "./TeacherModal.styles";
 
-
 interface ModalProps {
   userName: string;
   title: string;
@@ -61,7 +60,7 @@ const TeacherModal: React.FC<ModalProps> = ({
   };
 
   return (
-    <Modal className={`TeacherModal`}>
+    <Modal className={`TeacherModal`} style={{ height: "100%" }}>
       <ModalContainer>
         <ModalContent>
           <ModalHeader>

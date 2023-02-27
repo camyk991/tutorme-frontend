@@ -17,8 +17,7 @@ import {
 } from "../../GlobalStyles";
 
 import { Form, Link } from "react-router-dom";
-import './AddFriendModal.css'
-
+import "./AddFriendModal.css";
 
 interface ModalProps {
   userData: any;
@@ -33,8 +32,7 @@ const AddFriendModal: React.FC<ModalProps> = ({ userData, setFriendModal }) => {
   const handleSubmit: any = async (e: any) => {
     e.preventDefault();
 
-    if (id == "" || !userData || !userData.id)
-      return;
+    if (id == "" || !userData || !userData.id) return;
 
     const data = await API.addFriend(userData.id, id);
 
@@ -43,16 +41,22 @@ const AddFriendModal: React.FC<ModalProps> = ({ userData, setFriendModal }) => {
     } else {
       setModalInfo("Nie znaleziono");
     }
-    
   };
 
   return (
-    <Modal className={`TeacherModal ${userData?.theme || "light"}`}>
+    <Modal
+      className={`TeacherModal ${userData?.theme || "light"}`}
+      style={{ height: "100%" }}
+    >
       <ModalContainer>
         <ModalContent>
           <div className="scroll-container">
             <div className="modal-header ">
-              <form className="add-friend-form" method="POST" onSubmit={handleSubmit}>
+              <form
+                className="add-friend-form"
+                method="POST"
+                onSubmit={handleSubmit}
+              >
                 <FormHeading> Dodaj znajomego!</FormHeading>
                 <p>
                   <Input
