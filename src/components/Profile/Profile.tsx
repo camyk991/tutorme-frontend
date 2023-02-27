@@ -190,21 +190,18 @@ const Profile: React.FC<Profile> = ({
     const uData = await API.getLessons(mail);
 
     uData.data.map((el: any) => {
-      el.plannedLessons.map((lesson: any) => {
-        setAchievements([
-          ...achievements,
-          {
-            studentMail: lesson.studentMail,
-            teacherMail: lesson.teacherMail,
-            completed: lesson.completed,
-          },
-        ]);
-      });
+      setAchievements([
+        ...achievements,
+        {
+          studentMail: el.studentMail,
+          teacherMail: el.teacherMail,
+          completed: el.completed,
+        },
+      ]);
     });
   };
 
   const openAchievement = (imgData: any, title: string, info: string) => {
-    console.log(imgData.src);
     setIsAchievementOpen(!isAchievementOpen);
     achievementInfo.src = imgData.src;
     achievementInfo.title = title;
