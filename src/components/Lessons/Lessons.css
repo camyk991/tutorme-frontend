@@ -2,6 +2,7 @@
   color: var(--main-font);
 }
 
+
 .Lessons p {
   color: var(--secondary-font);
 }
@@ -70,11 +71,18 @@
 }
 
 .lesson-header-img {
-  background-color: red;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
+}
+
+.Lessons .lesson-header-img img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .lesson-header-info h2 {

@@ -4,6 +4,15 @@ type friendType = {
   avatar: string;
 }
 
+type plannedLesson = {
+  completed: boolean;
+  date: string;
+  lessonUrl: string;
+  points: string;
+  studentMail: string;
+  teacherMail: string;
+}
+
 export type UserInfoType = {
   id: string;
   name: string;
@@ -13,7 +22,8 @@ export type UserInfoType = {
   subjects: string[];
   points: number;
   theme: string;
-  friends: friendType[]
+  friends: friendType[];
+  plannedLessons: plannedLesson[];
 };
 
 export default {

@@ -1,3 +1,5 @@
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +25,9 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
       lessonUrl: "",
       points: 0,
       completed: false,
+      userName: "",
+      userProfile: "",
+      title: ""
     },
   ]);
 
@@ -65,6 +70,10 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
     getUserLessons(userData.mail);
   }, [userData]);
 
+  useEffect(() => {
+    console.log(lessons);
+  }, [lessons])
+
   const startLesson = async (
     url: any,
     emailT: any,
@@ -82,14 +91,9 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
 
   const getUserLessons = async (mail: string) => {
     const uData = await API.getLessons(mail);
+    console.log(uData);
 
-    uData.data.map((el: any, idx: any) => {
-      if (idx == 0) {
-        setLessons([...el.plannedLessons]);
-      } else {
-        setLessons([...lessons, ...el.plannedLessons]);
-      }
-    });
+    setLessons(uData.data);
   };
 
   return (
@@ -97,6 +101,16 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
       <ProfileHeader userData={userData}></ProfileHeader>
       <>
         <div className="offers-grid">
+        <button
+            className="refresh"
+            onClick={() => {
+              if (!userData)
+                return;
+
+              getUserLessons(userData.mail);
+            }}
+          ><FontAwesomeIcon icon={faRefresh} />
+          </button>
           <div className="offers-content">
             {lessons.length > 0 && lessons[0].date != "" ? (
               lessons.map((el, key) => {
@@ -104,16 +118,20 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
                   <div key={key} className="single-lesson">
                     <div>
                       <div className="lesson-header">
-                        <div className="lesson-header-img"></div>
+                        <div className="lesson-header-img">
+                          <img
+                          src={`/assets/${el.userProfile}`}
+                          alt={el.userProfile} />
+                        </div>
                         <div className="lesson-header-info">
-                          <h2>Daisy</h2>
+                          <h2>{el.userName}</h2>
                           <p>
                             {el.date.slice(6)}, {el.date.slice(0, 5)}
                           </p>
                         </div>
                       </div>
                       <div className="lesson-info">
-                        <p>Matura podstawowa z matematyki, trygonometria</p>
+                        <p>{el.title}</p>
                       </div>
                     </div>
 
@@ -125,16 +143,20 @@ const Lessons: React.FC<Props> = ({ userData, currLesson, setCurrLesson }) => {
                   <div key={key} className="single-lesson">
                     <div>
                       <div className="lesson-header">
-                        <div className="lesson-header-img"></div>
+                        <div className="lesson-header-img">
+                          <img
+                          src={`/assets/${el.userProfile}`}
+                          alt={el.userProfile} />
+                        </div>
                         <div className="lesson-header-info">
-                          <h2>Daisy</h2>
+                          <h2>{el.userName}</h2>
                           <p>
                             {el.date.slice(6)}, {el.date.slice(0, 5)}
                           </p>
                         </div>
                       </div>
                       <div className="lesson-info">
-                        <p>Matura podstawowa z matematyki, trygonometria</p>
+                        <p>{el.title}</p>
                       </div>
                     </div>
 

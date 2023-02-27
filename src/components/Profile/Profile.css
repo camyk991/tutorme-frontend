@@ -31,6 +31,7 @@ html {
 .header-links,
 .header-user-pic {
   height: 10vh;
+  display: flex;
   align-items: center;
 }
 
@@ -233,6 +234,7 @@ html.dark .Profile .main-content > section {
 #user-info-edit-btn {
   color: #fff;
   padding: 5px 20px;
+  height: 100%;
 }
 
 #user-info-edit-btn a {
