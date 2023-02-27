@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import API from "../../API";
 
-import { v4 as uuidv4 } from "uuid";
-
 import {
   ModalOverlay,
   ModalContent,

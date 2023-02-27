@@ -10,6 +10,7 @@ import VideoCall from "./components/Room/VideoCall";
 import PostOffer from "./components/PostOffer/PostOffer";
 import Waiting from "./components/Waiting/Waiting";
 import Lessons from "./components/Lessons/Lessons";
+import GroupChat from "./components/GroupChat/GroupChat";
 
 function App() {
   const {
@@ -28,7 +29,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/sign-up" element={<Register isLoggedIn={loggedIn} />} />4
+        <Route path="/sign-up" element={<Register isLoggedIn={loggedIn} />} />
+        <Route path="/group-chat" element={<GroupChat userData={userData} />} />
         <Route
           path="/sign-in"
           element={
