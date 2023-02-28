@@ -74,6 +74,7 @@ const Profile: React.FC<Profile> = ({
     if (!userData) return;
 
     getUserLessons(userData.mail);
+    console.log(userData);
   }, [userData?.mail]);
 
   useEffect(() => {
@@ -84,7 +85,7 @@ const Profile: React.FC<Profile> = ({
     // document.documentElement.classList.add(userData?.theme || "light");
   }, []);
 
-  
+
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -397,7 +398,29 @@ const Profile: React.FC<Profile> = ({
                     Dodaj
                   </button>
                 </div>
-                <div className="friends-list"></div>
+                <div className="friends-list">
+                <>
+                    {userData && userData.friends ? (
+                      userData?.friends.map((el) => {
+                        return (
+                          <div className="friend-el" key={el.id}>
+                            <div className="friend-pic">
+                              <div className="f-pic">
+                                <img
+                                  src={`/assets/${el?.avatar}`}
+                                  alt={el.avatar}
+                                />
+                              </div>
+                            </div>
+                            <div className="friend-name">{el.name}</div>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <>Brak</>
+                    )}
+                  </> 
+                </div>
               </div>
             </section>
           </div>
@@ -422,7 +445,7 @@ const Profile: React.FC<Profile> = ({
         />
       )}
       {friendModal && (
-        <AddFriendModal setFriendModal={setFriendModal} userData={userData} />
+        <AddFriendModal getData={getData} setFriendModal={setFriendModal} userData={userData} />
       )}
 
       {isAchievementOpen && (

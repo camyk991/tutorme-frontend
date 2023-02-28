@@ -22,9 +22,10 @@ import "./AddFriendModal.css";
 interface ModalProps {
   userData: any;
   setFriendModal: any;
+  getData: any;
 }
 
-const AddFriendModal: React.FC<ModalProps> = ({ userData, setFriendModal }) => {
+const AddFriendModal: React.FC<ModalProps> = ({ userData, setFriendModal, getData }) => {
   const [modalInfo, setModalInfo] = useState("");
   const [id, setId] = useState("");
   const [loading, setLoading] = useState(false);
@@ -38,6 +39,7 @@ const AddFriendModal: React.FC<ModalProps> = ({ userData, setFriendModal }) => {
 
     if (data.ok) {
       setModalInfo("Dodano znajomego!");
+      getData();
     } else {
       setModalInfo("Nie znaleziono");
     }
