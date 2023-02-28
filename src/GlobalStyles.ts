@@ -322,6 +322,12 @@ export const SignForm = styled.form`
     }
   }
 
+  @media (max-width: 640px) {
+    p.additional-info {
+      font-size: 14px;
+    }
+  }
+
   @media (max-width: 860px) {
     max-width: 60vw;
     border-radius: 1rem;

@@ -89,8 +89,8 @@ const Profile: React.FC<Profile> = ({
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/sign-in");
-      document.documentElement.classList.remove("light")
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.remove("dark");
     }
 
     if (ref.current === 0) {
@@ -182,21 +182,18 @@ const Profile: React.FC<Profile> = ({
     const uData = await API.getLessons(mail);
 
     uData.data.map((el: any) => {
-      el.plannedLessons.map((lesson: any) => {
-        setAchievements([
-          ...achievements,
-          {
-            studentMail: lesson.studentMail,
-            teacherMail: lesson.teacherMail,
-            completed: lesson.completed,
-          },
-        ]);
-      });
+      setAchievements([
+        ...achievements,
+        {
+          studentMail: el.studentMail,
+          teacherMail: el.teacherMail,
+          completed: el.completed,
+        },
+      ]);
     });
   };
 
   const openAchievement = (imgData: any, title: string, info: string) => {
-    console.log(imgData.src);
     setIsAchievementOpen(!isAchievementOpen);
     achievementInfo.src = imgData.src;
     achievementInfo.title = title;
@@ -400,36 +397,7 @@ const Profile: React.FC<Profile> = ({
                     Dodaj
                   </button>
                 </div>
-                <div className="friends-list">
-                  <>
-                    {/* {userData && userData.friends.length ? (
-                      userData?.friends.map((el) => {
-                        return (
-                          <div className="friend-el" key={el.id}>
-                            <div className="friend-pic">
-                              <div className="f-pic">
-                                <img
-                                  src={`/assets/${el?.avatar}`}
-                                  alt={el.avatar}
-                                />
-                              </div>
-                            </div>
-                            <div className="friend-name">{el.name}</div>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <>Brak</>
-                    )} */}
-                  </>
-
-                  {/* <div className="friend-el">
-                    <div className="friend-pic">
-                      <div className="f-pic"></div>
-                    </div>
-                    <div className="friend-name">Piotr</div>
-                  </div> */}
-                </div>
+                <div className="friends-list"></div>
               </div>
             </section>
           </div>

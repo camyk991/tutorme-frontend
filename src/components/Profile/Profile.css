@@ -57,6 +57,7 @@ html {
 }
 
 .header-menu {
+  cursor: pointer;
   width: 50px;
   height: 30px;
   display: flex;
@@ -84,6 +85,7 @@ html {
 }
 
 .header-links-a.open {
+  z-index: 12;
   display: block;
   position: absolute;
   left: 0;
@@ -165,14 +167,14 @@ html.dark .Profile .main-content > section {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  opacity: .7;
-  transition: all ease .3s;
+  opacity: 0.7;
+  transition: all ease 0.3s;
   cursor: pointer;
   position: relative;
 }
 
 .user-info-id::after {
-  content: 'Kopiuj';
+  content: "Kopiuj";
   position: absolute;
   width: 30px;
   height: 30px;

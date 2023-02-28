@@ -7,12 +7,10 @@ import { UserInfoType } from "../../API";
 
 type Props = {
   userData: UserInfoType | undefined;
-}
+};
 
-const ProfileHeader: React.FC<Props> = ({userData}) => {
+const ProfileHeader: React.FC<Props> = ({ userData }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -43,7 +41,7 @@ const ProfileHeader: React.FC<Props> = ({userData}) => {
               <Link to="/post-offer">Otrzymaj pomoc</Link>
             </div>
             <div className="header-link">
-              <Link to="#">Chat grupowy</Link>
+              <Link to="/group-chat">Chat grupowy</Link>
             </div>
           </div>
         </div>
