@@ -77,22 +77,14 @@ const Profile: React.FC<Profile> = ({
   }, [userData?.mail]);
 
   useEffect(() => {
-    getCurrentTheme();
+    // getCurrentTheme();
     handleGetPoints();
     handleGetOffers();
     getData();
-    document.documentElement.classList.add(userData?.theme || "light");
+    // document.documentElement.classList.add(userData?.theme || "light");
   }, []);
 
-  useEffect(() => {
-    if (userData?.theme == "light") {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    } else {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-    }
-  }, [userData?.theme]);
+  
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -107,10 +99,10 @@ const Profile: React.FC<Profile> = ({
     }
   }, [isLoggedIn]);
 
-  async function getCurrentTheme() {
-    const data = await API.getUserThemeFetch(userData?.mail || "");
-    setUserData({ ...userData, theme: data.theme });
-  }
+  // async function getCurrentTheme() {
+  //   const data = await API.getUserThemeFetch(userData?.mail || "");
+  //   setUserData({ ...userData, theme: data.theme });
+  // }
 
   const handleTheme = async (e: React.FormEvent) => {
     e.preventDefault();

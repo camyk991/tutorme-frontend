@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import EditProfile from "./components/EditProfile/EditProfile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import Register from "./components/Register/Register";
@@ -24,6 +24,19 @@ function App() {
   } = useIsLoggedIn();
   const [inCall, setInCall] = useState(true);
   const [roomId, setRoomId] = useState("1");
+
+  useEffect(() => {
+    if (userData === undefined) {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    } else if (userData?.theme == "light") {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    }
+  }, [userData?.theme]);
 
   return (
     <div className="App">
