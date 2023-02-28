@@ -27,7 +27,6 @@ export const useIsLoggedIn = () => {
       } else {
         setLoggedIn(true);
         setUserData(userStoredData);
-        console.log(userStoredData);
       }
     } else {
       setLoggedIn(false);
@@ -35,6 +34,13 @@ export const useIsLoggedIn = () => {
 
     setLoading(false);
   }, []);
+
+  useEffect(() => {
+    if (!loggedIn)
+      return;
+
+    localStorage.setItem("user", JSON.stringify(userData));
+  }, [userData]);
 
   useEffect(() => {}, []);
 
@@ -58,11 +64,8 @@ export const useIsLoggedIn = () => {
       return;
     }
 
-    console.log(data);
     localStorage.setItem("user", JSON.stringify(data.user));
     setUserData(data.user);
-
-    console.log(userData);
   };
 
   return {
