@@ -24,6 +24,7 @@ const EditProfile: React.FC<Props> = ({
   const [show, setShow] = useState(false);
   const [img, setImage] = useState("");
   const [info, setInfo] = useState("");
+  const [editLoading, setEditLoading] = useState(false);
   const [subjects, setSubjects] = useState([
     "polski",
     "angielski",
@@ -54,25 +55,6 @@ const EditProfile: React.FC<Props> = ({
     "rabbit.png",
   ];
 
-  useEffect(() => {
-    document.documentElement.classList.add(userData?.theme || "light");
-
-    console.log(userData?.theme);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.add(userData?.theme || "light");
-
-    if (userData?.theme == "light") {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    } else if (userData?.theme == "dark") {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-    }
-
-    console.log(userData?.theme);
-  }, [userData]);
 
   useEffect(() => {
     // console.log("islogged in edit page: " + isLoggedIn)
@@ -104,11 +86,13 @@ const EditProfile: React.FC<Props> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setEditLoading(true);
 
     if (!userData || !userData.mail) return;
 
     if (name.length < 3) {
       setInfo("Nazwa powinna mieć przynajmniej 3 znaki");
+      setEditLoading(false);
       return;
     }
 
@@ -123,8 +107,10 @@ const EditProfile: React.FC<Props> = ({
     if (data.ok) {
       setInfo("Zapisano zmiany!");
       getData();
+      setEditLoading(false);
     } else {
       setInfo("Nie zapisano zmian.");
+      setEditLoading(false);
     }
   };
 
@@ -223,7 +209,6 @@ const EditProfile: React.FC<Props> = ({
                 </div>
               </div>
               <FormInfo>{info}</FormInfo>
-              {loading ? <Loader /> : null}
             </div>
 
             <ButtonContainer>
@@ -240,6 +225,9 @@ const EditProfile: React.FC<Props> = ({
                 Zapisz zmiany
               </Submit>
             </ButtonContainer>
+            <div className="loader-wrapper">
+                {editLoading ? <Loader /> : null}
+              </div>
           </Form>
         </>
       </FormWrapper>

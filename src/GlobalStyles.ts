@@ -144,6 +144,9 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .loader-wrapper {
+    position: relative;
+  }
 
   #nav {
     position: fixed;
@@ -456,14 +459,18 @@ export const Loader = styled.div`
     }
   }
 
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 30px;
   height: 30px;
   vertical-align: middle;
   border-radius: 50px;
-  border: 6px solid rgba(255, 255, 255, 0.4);
-  margin: 10px auto 0;
+  border: 6px solid var(--accent);
+  opacity: 0.4;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  z-index: 10;
 
   ::after {
     content: "";

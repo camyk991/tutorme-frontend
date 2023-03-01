@@ -494,3 +494,9 @@ body {
     grid-area: 7 / 6 / 10 / 15;
   }
 }
+
+@media (max-width: 767px) {
+  .user-info-edit {
+    margin-top: 10px;
+  }
+}

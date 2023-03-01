@@ -107,16 +107,17 @@ const Profile: React.FC<Profile> = ({
 
   const handleTheme = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    setUserData({
+      ...userData,
+      theme: userData?.theme == "light" ? "dark" : "light",
+    });
 
     const data = await API.putTheme(
       userData?.theme == "light" ? "dark" : "light",
       userData?.mail || ""
     );
 
-    setUserData({
-      ...userData,
-      theme: userData?.theme == "light" ? "dark" : "light",
-    });
 
     if (data.ok) {
       console.log("zmiana motywu");
