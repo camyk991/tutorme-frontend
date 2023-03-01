@@ -70,6 +70,9 @@ const TeacherModal: React.FC<ModalProps> = ({
             <div>
               <ModalSubHeaders>Opis</ModalSubHeaders>
               <p>{info}</p>
+            </div>
+            <div>
+              <ModalSubHeaders>Punkty</ModalSubHeaders>
               <p>{points}</p>
             </div>
             <div>

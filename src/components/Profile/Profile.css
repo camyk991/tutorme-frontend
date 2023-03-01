@@ -307,6 +307,11 @@ for now will have to do */
   max-height: 350px;
 }
 
+.friends-list {
+  overflow-y: auto;
+  max-height: 130px;
+}
+
 .teachers-header button {
   background-color: var(--accent);
   color: #fff;
@@ -332,6 +337,7 @@ for now will have to do */
 .teacher-el:hover,
 .friend-el:hover {
   background-color: var(--hover);
+  cursor: pointer;
 }
 
 .teacher-name {

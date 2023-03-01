@@ -26,6 +26,7 @@ export default function Controls(props) {
 
   useEffect(() => {
     const getTeacherAndStudentPoints = async () => {
+      console.log(currLesson);
       const tPoints = await API.getPoints(currLesson.teacherEmail);
       const sPoints = await API.getPoints(currLesson.studentEmail);
       setTeacherPoints(tPoints);
