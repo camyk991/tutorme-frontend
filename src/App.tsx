@@ -27,7 +27,7 @@ function App() {
   const [roomId, setRoomId] = useState("1");
 
   useEffect(() => {
-    console.log(userData?.theme)
+    console.log('test');
 
     if (userData === undefined) {
       document.documentElement.classList.remove("dark");
@@ -39,7 +39,7 @@ function App() {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
-  }, [userData?.theme]);
+  }, [userData]);
 
   return (
     <div className="App">

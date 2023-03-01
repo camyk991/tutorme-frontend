@@ -39,7 +39,7 @@ const Login: React.FC<Props> = ({ isLoggedIn, setLoggedIn, setUserData }) => {
       setInfo("Zalogowano!");
       setLoggedIn(true);
       setUserData(data.user);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      
       navigate("/");
     } else {
       setInfo(data.error);
