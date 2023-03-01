@@ -129,6 +129,28 @@ export default function Controls(props) {
     }
   `;
 
+  const StreamBtn = styled.button`
+    cursor: pointer;
+    background-color: var(--light-bg);
+    color: #fff;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 0;
+    transition: all 0.2s ease-in-out;
+    transition: ease background-color 250ms;
+    &:hover {
+      background-color: #845695;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  `;
+
   const LeaveBtn = styled.button`
     cursor: pointer;
     background-color: #ff5050;
@@ -146,10 +168,6 @@ export default function Controls(props) {
       color: white;
       border: 2px solid #f83a3a;
       background-color: #f83a3a;
-    }
-
-    @media (max-width: 600px) {
-      display: none;
     }
   `;
 
@@ -198,7 +216,8 @@ export default function Controls(props) {
         </div>
         <div>
           {/* share screen */}
-          <ActionBtn
+          <StreamBtn
+            className="stream-btn"
             onClick={() => {
               setIsScreenSharing(!isScreenSharing);
               setIfScreenShared(true);
@@ -224,7 +243,7 @@ export default function Controls(props) {
               users={users}
               ifScreenShared={ifScreenShared}
             />
-          </ActionBtn>
+          </StreamBtn>
         </div>
         <div>
           <LeaveBtn onClick={() => leaveChannel()}>

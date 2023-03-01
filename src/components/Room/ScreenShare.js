@@ -68,6 +68,7 @@ export default function ScreenShare(props) {
 
       client.unpublish(screenTrack);
       client.publish([videoTrack[1]]);
+      client.publish([videoTrack[0]]);
     }
   }
 
