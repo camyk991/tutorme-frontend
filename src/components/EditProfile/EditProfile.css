@@ -9,3 +9,7 @@
 .profile-image.checked {
   transform: scale(1.4);
 }
+
+.for-checkbox-tools {
+  border: none;
+}
