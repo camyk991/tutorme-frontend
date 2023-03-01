@@ -74,7 +74,7 @@ export default function Controls(props) {
           currLesson.studentEmail,
           currLesson.url
         );
-      } else if (userData.mail == undefined || userData.mail == "") {
+      } else if (userData == undefined) {
         window.location.href = "/";
       }
 
