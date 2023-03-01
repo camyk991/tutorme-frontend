@@ -2,7 +2,6 @@
   color: var(--main-font);
 }
 
-
 .Lessons p {
   color: var(--secondary-font);
 }
@@ -48,7 +47,7 @@
   justify-content: space-between;
 }
 
-.Lessons button {
+.Lessons button:not(.refresh) {
   min-width: fit-content;
   width: 140px;
   margin: 0 auto;
