@@ -97,7 +97,7 @@ div > p {
   color: transparent;
 }
 
-.button.animate:after {
+.button.animate::after {
   position: absolute;
   content: "";
   width: 25px;
@@ -120,7 +120,7 @@ div > p {
   -webkit-animation-fill-mode: forwards;
 }
 
-.button.animate.success:before {
+.button.animate.success::before {
   position: absolute;
   content: "";
   width: 25px;
@@ -169,7 +169,7 @@ div > p {
     transform: translate(-50%, -50%) rotate(1080deg) scale(1);
   }
   100% {
-    transform: scale(0);
+    transform: scale(0) translate(-50%, -50%);
   }
 }
 
