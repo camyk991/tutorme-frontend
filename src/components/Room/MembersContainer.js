@@ -10,7 +10,7 @@ function MembersContainer(props) {
         className={memberContainer ? "members__container__hidden" : null}
       >
         <div id="members__header">
-          <p>Participants</p>
+          <p>Uczestnicy</p>
           <strong id="members__count">{users.length + 1}</strong>
         </div>
 

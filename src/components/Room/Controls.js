@@ -74,6 +74,8 @@ export default function Controls(props) {
           currLesson.studentEmail,
           currLesson.url
         );
+      } else if (userData.mail == undefined || userData.mail == "") {
+        window.location.href = "/";
       }
 
       // leave channel
@@ -97,6 +99,14 @@ export default function Controls(props) {
     transform: translateX(-50%);
     display: flex;
     height: fit-content;
+
+    @media (min-width: 775px) {
+      left: 35%;
+    }
+
+    @media (min-width: 1100px) {
+      left: 50%;
+    }
   `;
 
   const ActionBtn = styled.button`
@@ -134,6 +144,10 @@ export default function Controls(props) {
       color: white;
       border: 2px solid #f83a3a;
       background-color: #f83a3a;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
     }
   `;
 

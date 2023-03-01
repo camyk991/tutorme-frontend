@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "./logo1.png";
 import "./Room.css";
 
 export default function Header(props) {
@@ -22,7 +22,7 @@ export default function Header(props) {
             <path d="M24 19h-24v-1h24v1zm0-6h-24v-1h24v1zm0-6h-24v-1h24v1z" />
           </svg>
         </button>
-        <a href="lobby.html">
+        <a href="/">
           <h3 id="logo">
             <img src={logo} alt="Site Logo" />
             <span>TutorMe</span>
@@ -36,9 +36,9 @@ export default function Header(props) {
             width="24"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            fill="#ede0e0"
-            clipRule="evenodd"
+            fill="var(--bg)"
+            fillRule="var(--accent)"
+            clipRule="var(--accent)"
           >
             <path d="M24 20h-3v4l-5.333-4h-7.667v-4h2v2h6.333l2.667 2v-2h3v-8.001h-2v-2h4v12.001zm-15.667-6l-5.333 4v-4h-3v-14.001l18 .001v14h-9.667zm-6.333-2h3v2l2.667-2h8.333v-10l-14-.001v10.001z" />
           </svg>

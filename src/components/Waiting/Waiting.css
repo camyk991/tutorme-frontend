@@ -49,7 +49,7 @@
   flex-direction: column;
 }
 
-.Waiting button {
+.Waiting button:not(.refresh) {
   min-width: fit-content;
   width: 140px;
   margin: auto;
@@ -58,8 +58,10 @@
 .refresh {
   background-color: var(--accent);
   color: #fff;
+  width: 80px;
   padding: 5px 20px;
-  margin: 0;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .modal-image img {
