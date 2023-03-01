@@ -248,8 +248,12 @@ const Profile: React.FC<Profile> = ({
                     </p>
                     <p>
                       {userData?.subjects && userData?.subjects.length
-                        ? userData.subjects.map((el: any) => {
-                            return el + " ";
+                        ? userData.subjects.map((el: any, idx: any) => {
+                            if (idx == userData.subjects.length - 1) {
+                              return el;
+                            } else {
+                              return el + " " + "-" + " ";
+                            }
                           })
                         : "brak"}
                     </p>
