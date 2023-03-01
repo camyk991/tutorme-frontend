@@ -15,6 +15,7 @@
   margin: auto;
   border-radius: 1.4rem;
   min-height: 78vh;
+  align-content: flex-start;
 }
 
 .Waiting.light .offers-content {
