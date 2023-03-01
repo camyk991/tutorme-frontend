@@ -54,6 +54,10 @@ export default function Controls(props) {
     let isExecuted = window.confirm("Zakończyć lekcje?");
 
     if (isExecuted) {
+      if (userData == undefined) {
+        window.location.href = "/";
+      }
+
       if (userData.mail == currLesson.teacherEmail) {
         // get points
         await API.updatePoints(
@@ -74,8 +78,6 @@ export default function Controls(props) {
           currLesson.studentEmail,
           currLesson.url
         );
-      } else if (userData == undefined) {
-        window.location.href = "/";
       }
 
       // leave channel
