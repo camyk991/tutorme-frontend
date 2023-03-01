@@ -105,7 +105,10 @@ const Register: React.FC<Props> = ({ isLoggedIn }) => {
             </Link>
           </p>
 
-          {loading ? <Loader /> : null}
+          <div className="loader-wrapper">
+            {loading ? <Loader /> : null}
+          </div>
+
           <FormInfo>
             {info &&
               info.map((e, i) => {

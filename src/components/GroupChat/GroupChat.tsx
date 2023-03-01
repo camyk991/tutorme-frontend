@@ -31,7 +31,7 @@ const GroupChat: React.FC<Props> = ({ userData }) => {
   return (
     <div className="GroupChat">
       <ProfileHeader userData={userData}></ProfileHeader>
-      <div className="edit-container light">
+      <div className="edit-container">
         <FormWrapper>
           <SignForm method="POST">
             <SignHeading>Dołącz do pokoju</SignHeading>

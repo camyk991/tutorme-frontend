@@ -16,10 +16,10 @@ export const ModalContainer = styled.div`
 
 export const ModalContent = styled.div`
   min-width: 45vw;
-  position: absolute;
-  top: 20vh;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   z-index: 10;
   background-color: var(--light-bg);
   border-radius: 2rem;
@@ -67,9 +67,13 @@ export const ModalFooter = styled.div`
 `;
 
 export const ModalOverlay = styled.div`
-  z-index: -1;
   width: auto;
   height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0%;
+  top: 0;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.404);
 `;
 

@@ -89,7 +89,9 @@ const Login: React.FC<Props> = ({ isLoggedIn, setLoggedIn, setUserData }) => {
 
           <FormInfo>
             {info}
-            {loading ? <Loader /> : null}
+            <div className="loader-wrapper">
+              {loading ? <Loader /> : null}
+            </div>
           </FormInfo>
 
           <p>
