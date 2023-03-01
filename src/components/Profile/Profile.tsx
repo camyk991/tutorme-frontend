@@ -9,6 +9,7 @@ import {
   faSun,
   faMoon,
   faUserEdit,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { UserInfoType } from "../../API";
@@ -84,8 +85,6 @@ const Profile: React.FC<Profile> = ({
     getData();
     // document.documentElement.classList.add(userData?.theme || "light");
   }, []);
-
-
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -250,8 +249,12 @@ const Profile: React.FC<Profile> = ({
                     </p>
                     <p>
                       {userData?.subjects && userData?.subjects.length
-                        ? userData.subjects.map((el: any) => {
-                            return el + " ";
+                        ? userData.subjects.map((el: any, idx: any) => {
+                            if (idx == userData.subjects.length - 1) {
+                              return el;
+                            } else {
+                              return el + " " + "-" + " ";
+                            }
                           })
                         : "brak"}
                     </p>
@@ -337,7 +340,10 @@ const Profile: React.FC<Profile> = ({
               <div className="teachers-content">
                 <div className="teachers-header">
                   <p>Wybrane dla ciebie</p>
-                  <button onClick={handleGetOffers}>
+                  <button
+                    onClick={handleGetOffers}
+                    style={{ padding: "10px 20px" }}
+                  >
                     <FontAwesomeIcon icon={faRefresh} />
                   </button>
                 </div>
@@ -392,15 +398,16 @@ const Profile: React.FC<Profile> = ({
                 <div className="friends-header">
                   <p>Znajomi</p>
                   <button
+                    style={{ padding: "10px 15px" }}
                     onClick={() => {
                       setFriendModal(true);
                     }}
                   >
-                    Dodaj
+                    <FontAwesomeIcon icon={faUserPlus} />
                   </button>
                 </div>
                 <div className="friends-list">
-                <>
+                  <>
                     {userData && userData.friends ? (
                       userData?.friends.map((el) => {
                         return (
@@ -420,7 +427,7 @@ const Profile: React.FC<Profile> = ({
                     ) : (
                       <>Brak</>
                     )}
-                  </> 
+                  </>
                 </div>
               </div>
             </section>
@@ -446,7 +453,11 @@ const Profile: React.FC<Profile> = ({
         />
       )}
       {friendModal && (
-        <AddFriendModal getData={getData} setFriendModal={setFriendModal} userData={userData} />
+        <AddFriendModal
+          getData={getData}
+          setFriendModal={setFriendModal}
+          userData={userData}
+        />
       )}
 
       {isAchievementOpen && (

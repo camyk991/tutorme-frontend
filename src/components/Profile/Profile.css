@@ -304,7 +304,12 @@ html.dark .Profile .main-content > section {
 for now will have to do */
 .teachers-list {
   overflow-y: auto;
-  max-height: 350px;
+  max-height: 390px;
+}
+
+.friends-list {
+  overflow-y: auto;
+  max-height: 140px;
 }
 
 .teachers-header button {
@@ -332,6 +337,7 @@ for now will have to do */
 .teacher-el:hover,
 .friend-el:hover {
   background-color: var(--hover);
+  cursor: pointer;
 }
 
 .teacher-name {

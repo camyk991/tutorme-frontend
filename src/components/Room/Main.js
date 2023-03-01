@@ -1,6 +1,6 @@
 import { useState } from "react";
 import VideoCall from "./VideoCall";
-import logo from "./logo.png";
+import logo from "./logo1.png";
 import "./Lobby.css";
 
 function Main() {
@@ -27,7 +27,7 @@ function Main() {
         <div className="Lobby">
           <header id="nav">
             <div className="nav--list">
-              <a href="lobby.html">
+              <a href="/">
                 <h3 id="logo">
                   <img src={logo} alt="logo" />
                   <span>TutorMe</span>
@@ -48,7 +48,7 @@ function Main() {
                   <path d="M20 7.093v-5.093h-3v2.093l3 3zm4 5.907l-12-12-12 12h3v10h7v-5h4v5h7v-10h3zm-5 8h-3v-5h-8v5h-3v-10.26l7-6.912 7 6.99v10.182z" />
                 </svg>
               </a>
-              <a className="nav__link" id="create__room__btn" href="lobby.html">
+              <a className="nav__link" id="create__room__btn" href="/">
                 Create Room
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

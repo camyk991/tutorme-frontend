@@ -110,7 +110,7 @@ function Messages(props: any) {
           <input
             type="text"
             name="message"
-            placeholder="Send a message...."
+            placeholder="Wyślij wiadomość...."
             value={textInput}
             onChange={(e) => setTextInput(e.target.value)}
           />

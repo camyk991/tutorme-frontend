@@ -159,7 +159,7 @@ export const GlobalStyle = createGlobalStyle`
     border-bottom: 1px solid var(--light-bg);
     background-color: var(--bg);
     text-decoration: none;
-    padding: 16px 5%;
+    padding: 12px 5%;
     z-index: 999;
   }
 
@@ -189,7 +189,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #logo img {
-    height: 42px;
+    height: 50px;
   }
 
   #nav a {
@@ -250,10 +250,26 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
   }
 
+  #members__button svg,
+  #chat__button svg,
+  .nav__link svg {
+    background-color: var(--accent);
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    fill: var(--bg);
+  }
+
   #members__button:hover svg > path,
   #chat__button:hover svg,
   .nav__link:hover svg {
-    fill: #845695;
+    fill: var(--accent);
+    background-color: var(--bg);
+  }
+
+  #members__button:hover svg {
+    background-color: var(--bg);
   }
 
   .nav__link svg {
@@ -261,15 +277,24 @@ export const GlobalStyle = createGlobalStyle`
     height: 0;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+     #chat__button {
+      display: block;
+    }
+  }
+
+  @media (max-width: 1200px) {
     #members__button {
       display: block;
     }
+  }
 
+  @media (max-width: 640px) {
     .nav__link svg {
       width: 1.5rem;
       height: 1.5rem;
     }
+
     .nav__link,
     #create__room__btn {
       font-size: 0;

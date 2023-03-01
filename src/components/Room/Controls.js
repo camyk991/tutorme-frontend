@@ -26,6 +26,7 @@ export default function Controls(props) {
 
   useEffect(() => {
     const getTeacherAndStudentPoints = async () => {
+      console.log(currLesson);
       const tPoints = await API.getPoints(currLesson.teacherEmail);
       const sPoints = await API.getPoints(currLesson.studentEmail);
       setTeacherPoints(tPoints);
@@ -53,6 +54,10 @@ export default function Controls(props) {
     let isExecuted = window.confirm("Zakończyć lekcje?");
 
     if (isExecuted) {
+      if (userData == undefined) {
+        window.location.href = "/";
+      }
+
       if (userData.mail == currLesson.teacherEmail) {
         // get points
         await API.updatePoints(
@@ -96,6 +101,14 @@ export default function Controls(props) {
     transform: translateX(-50%);
     display: flex;
     height: fit-content;
+
+    @media (min-width: 775px) {
+      left: 35%;
+    }
+
+    @media (min-width: 1100px) {
+      left: 50%;
+    }
   `;
 
   const ActionBtn = styled.button`
@@ -133,6 +146,10 @@ export default function Controls(props) {
       color: white;
       border: 2px solid #f83a3a;
       background-color: #f83a3a;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
     }
   `;
 
