@@ -116,7 +116,7 @@ div > p {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   animation: spin ease-in 2.5s forwards;
   animation-name: spin;
   -webkit-animation-name: spin;
