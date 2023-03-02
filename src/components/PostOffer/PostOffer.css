@@ -106,17 +106,18 @@ div > p {
 }
 
 .button.animate::after {
+  display: none;
   position: absolute;
   content: "";
   width: 25px;
   height: 25px;
-  border: 4px solid #fefefe;
+  border: 4px solid transparent;
   border-radius: 50%;
   border-left-color: transparent;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%);
   animation: spin ease-in 2.5s forwards;
   animation-name: spin;
   -webkit-animation-name: spin;
